@@ -7,31 +7,90 @@
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
   <style>
-    .legend-container {
-        max-height: 300px; /* Atur tinggi maksimal legenda */
-        overflow-y: auto; /* Aktifkan scroll vertikal */
-        border: 1px solid #ddd; /* Tambahkan border opsional */
-        padding: 10px;
-        margin-left: 20px;
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
     }
-    .legend-item {
+
+    .navbar {
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        margin-bottom: 5px;
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
     }
-    .legend-color {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
+
+    .navbar .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .navbar .menu {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar .menu li {
+        margin: 0 10px;
+    }
+
+    .navbar .menu a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 15px;
+        transition: background-color 0.3s;
+    }
+
+    .navbar .menu a:hover {
+        background-color: #575757;
+        border-radius: 5px;
+    }
+
+    .navbar .menu-toggle {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .navbar .menu {
+            flex-direction: column;
+            display: none;
+            width: 100%;
+            background-color: #333;
+        }
+
+        .navbar .menu.active {
+            display: flex;
+        }
+
+        .navbar .menu li {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .navbar .menu-toggle {
+            display: block;
+        }
     }
 </style>
 </head>
 <body class="bg-gray-100 font-sans">
   <!-- Navbar -->
-  <nav class="bg-blue-600 text-white p-4">
-    <h1 class="text-xl font-bold">Dashboard WebGIS</h1>
-  </nav>
+  <nav class="navbar">
+    <div class="logo">Dashboard Perolehan Suara Partai Politik Dapil Provinsi Bali Pemilu 2024</div>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <ul class="menu">
+        <li><a href="https://airdingin.github.io/dashboardpemilubali2024/">Home</a></li>
+        <li><a href="https://airdingin.github.io/webgisp2024/">See Fullscreen Map</a></li>
+        <li><a href="https://instagram.com/ngguhbd">Contact</a></li>
+    </ul>
+</nav>
 
   <!-- Main Content -->
   <div class="container mx-auto mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
